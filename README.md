@@ -1,20 +1,8 @@
-📊 Sentiment Analysis — Comparative Study
+📊 Sentiment Analysis using Machine Learning
 
-A machine learning project that compares Naive Bayes, Logistic Regression, and Support Vector Machine (SVM) models for sentiment classification using the DailyDialog dataset.
+A machine learning project for classifying conversational text into Positive, Negative, and Neutral sentiment categories using the DailyDialog dataset.
 
-The project performs text preprocessing, TF-IDF feature extraction, model training, evaluation, and sentiment prediction. A Streamlit application provides an interactive interface for the final model.
-
-🌐 Live Demo
-
-🚀 Try the deployed Streamlit application:
-
-https://sentimentalanalysis-2e2iguxmqlkgehxkxe2p3b.streamlit.app/
-
-📌 Project Overview
-
-Sentiment analysis is the task of identifying the emotional tone of a piece of text.
-
-This project compares three machine learning algorithms:
+The project compares three traditional machine learning algorithms:
 
 Multinomial Naive Bayes
 
@@ -22,103 +10,363 @@ Logistic Regression
 
 Support Vector Machine (SVM)
 
-The models classify text into three sentiment categories:
+A Streamlit web application is also provided for interactive sentiment prediction.
+
+🚀 Live Demo
+
+Try the deployed application here:
+
+👉 Sentiment Analysis Web App
+
+Replace the link above with your actual Streamlit deployment URL if it is different from your GitHub repository URL.
+
+📌 Project Overview
+
+Sentiment analysis is a Natural Language Processing (NLP) task that determines the emotional orientation of text.
+
+In this project, conversational sentences from the DailyDialog dataset are converted into three sentiment classes:
+
+Sentiment
+
+Description
 
 😊 Positive
 
+Text expressing a positive or favorable attitude
+
 😐 Neutral
+
+Text expressing neither clearly positive nor negative sentiment
 
 😞 Negative
 
-After comparing the models, SVM achieved the best overall performance in this project.
+Text expressing an unfavorable or negative attitude
 
-✨ Features
+The main objective is to compare multiple machine learning approaches and identify a model that performs effectively on conversational data.
 
-Text preprocessing and cleaning
+🗂️ Dataset
 
-Sentiment label mapping
+The project uses the DailyDialog dataset, which contains multi-turn conversations representing everyday human communication.
 
-TF-IDF based feature extraction
+The original emotion information is mapped into three broader sentiment categories:
 
-Training with multiple machine learning algorithms
+Positive
 
-Model comparison using accuracy
+Negative
 
-Evaluation using precision, recall, and F1-score
+Neutral
 
-Data augmentation for the SVM model
+The dataset used in this project is available as:
 
-Interactive sentiment prediction through Streamlit
+DailyDialog.csv
 
-Sample dataset included in the repository
-
-📊 Model Performance
-
-The models were evaluated on the DailyDialog dataset.
-
-Model
-
-Accuracy
-
-🥇 Support Vector Machine (SVM)
-
-80.73%
-
-🥈 Logistic Regression
-
-80.63%
-
-🥉 Naive Bayes
-
-72.24%
-
-Best Model
-
-The Support Vector Machine (SVM) model achieved the highest accuracy of approximately 80.73% and provided the best overall balance among the tested approaches.
-
-🧠 Machine Learning Workflow
+🔄 Project Workflow
 
 DailyDialog Dataset
         ↓
 Data Cleaning
         ↓
-Emotion → Sentiment Mapping
+Sentiment Label Mapping
         ↓
 Text Preprocessing
         ↓
-TF-IDF Vectorization
+TF-IDF Feature Extraction
         ↓
 Train / Test Split
         ↓
-Model Training
-   ┌────┼───────────────┐
-   ↓    ↓               ↓
-Naive  Logistic         SVM
-Bayes  Regression
-   └────┼───────────────┘
+┌───────────────────────────────┐
+│  Naive Bayes                  │
+│  Logistic Regression          │
+│  Support Vector Machine (SVM) │
+└───────────────────────────────┘
         ↓
 Model Evaluation
         ↓
 Best Model Selection
         ↓
-Sentiment Prediction
-        ↓
 Streamlit Web Application
+        ↓
+Sentiment Prediction
 
-📂 Project Structure
+The project workflow is also illustrated in Flow.png.
 
-Sentimental_Analysis-main/
+🧹 Data Preprocessing
+
+The text data is processed before training the machine learning models.
+
+The preprocessing pipeline includes:
+
+Converting text to lowercase
+
+Removing unnecessary punctuation and special characters
+
+Cleaning the conversational text
+
+Mapping the original emotion labels to sentiment categories
+
+Converting text into numerical features using TF-IDF
+
+🧮 Feature Extraction — TF-IDF
+
+TF-IDF (Term Frequency–Inverse Document Frequency) is used to transform text into numerical feature vectors.
+
+TF-IDF gives higher importance to words that are useful for distinguishing between documents while reducing the influence of very common words.
+
+This representation is then supplied to the machine learning classifiers.
+
+🤖 Machine Learning Models
+
+1. Multinomial Naive Bayes
+
+Naive Bayes is used as a baseline text-classification algorithm.
+
+It is computationally efficient and commonly used for NLP classification tasks.
+
+2. Logistic Regression
+
+Logistic Regression is used as a strong linear classification model for the TF-IDF features.
+
+It learns the relationship between words and the corresponding sentiment classes.
+
+3. Support Vector Machine (SVM)
+
+A linear SVM is used for high-dimensional text classification.
+
+SVM was selected as the best-performing model in the comparative experiments.
+
+📈 Model Performance
+
+The comparative results from the project are:
+
+Model
+
+Accuracy
+
+Weighted F1-Score
+
+Naive Bayes
+
+72.24%
+
+69%
+
+Logistic Regression
+
+80.63%
+
+80%
+
+SVM
+
+80.73%
+
+80%
+
+🏆 Best Model
+
+Support Vector Machine (SVM) achieved the highest accuracy of approximately 80.73% among the tested models.
+
+The model also showed improved performance for the positive and neutral classes after addressing the class imbalance through data augmentation.
+
+📊 SVM Classification Report
+
+Class
+
+Precision
+
+Recall
+
+F1-Score
+
+Negative
+
+0.85
+
+0.91
+
+0.88
+
+Neutral
+
+0.72
+
+0.71
+
+0.71
+
+Positive
+
+0.77
+
+0.61
+
+0.68
+
+Overall Accuracy: 80.73%
+
+🖥️ Streamlit Application
+
+The project includes an interactive Streamlit application where users can enter a sentence and obtain a sentiment prediction.
+
+Example
+
+Input:
+
+I really enjoyed the movie.
+
+Expected sentiment:
+
+Positive
+
+Another example:
+
+Input:
+
+I am not happy with the service.
+
+Expected sentiment:
+
+Negative
+
+The Streamlit interface makes it possible to test the trained sentiment-analysis model without running the prediction code manually.
+
+📁 Project Structure
+
+Sentiment-Analysis-Project/
 │
 ├── DailyDialog.csv
 ├── NaiveBayes.ipynb
 ├── Logistic_Regression.ipynb
 ├── SVM.ipynb
-├── Comparision.png
-├── Flowchart (1).png
-├── ML_Report_merged.pdf
+├── Flow.png
+├── Model Comparision.png
+├── ML_Report.pdf
+├── app.py
+├── requirements.txt
 └── README.md
 
-Files
+The exact files may vary depending on the final deployed version of the project.
+
+⚙️ Installation
+
+Clone the repository:
+
+git clone https://github.com/YourUsername/Sentiment-Analysis-Project.git
+cd Sentiment-Analysis-Project
+
+Install the required Python packages:
+
+pip install -r requirements.txt
+
+If requirements.txt is not available, install the main dependencies:
+
+pip install pandas numpy scikit-learn matplotlib streamlit
+
+▶️ Run the Streamlit Application
+
+Run:
+
+streamlit run app.py
+
+The application will open in your browser.
+
+📓 Running the Notebooks
+
+The project contains notebooks for the individual machine learning models:
+
+NaiveBayes.ipynb
+Logistic_Regression.ipynb
+SVM.ipynb
+
+They can be opened using:
+
+Jupyter Notebook
+
+JupyterLab
+
+VS Code
+
+Google Colab
+
+🎯 Applications
+
+This sentiment-analysis system can be used for:
+
+Customer feedback analysis
+
+Chat and conversation analysis
+
+Social media sentiment monitoring
+
+Market research
+
+Customer-support analysis
+
+Opinion mining
+
+Conversational AI
+
+🔮 Future Improvements
+
+Possible future improvements include:
+
+Using BERT or other Transformer models
+
+Improving handling of negation such as "not bad"
+
+Hyperparameter tuning
+
+Better handling of class imbalance
+
+Larger and more diverse datasets
+
+Real-time sentiment monitoring
+
+Improved probability/confidence calibration
+
+Deployment with a production API
+
+⚠️ Limitations
+
+Traditional machine learning models based on TF-IDF primarily learn statistical relationships between words.
+
+Therefore, they may have difficulty understanding:
+
+Sarcasm
+
+Context-dependent expressions
+
+Negation
+
+Mixed emotions
+
+Very short sentences
+
+Unseen vocabulary
+
+For example, expressions such as "not bad" can sometimes be difficult for a traditional bag-of-words model because the model may give too much importance to individual words instead of understanding the complete phrase.
+
+👨‍💻 Technologies Used
+
+Python
+
+Pandas
+
+NumPy
+
+Scikit-learn
+
+Matplotlib
+
+Jupyter Notebook
+
+Streamlit
+
+TF-IDF
+
+Machine Learning
+
+📚 Project Files
 
 File
 
@@ -126,7 +374,7 @@ Description
 
 DailyDialog.csv
 
-Dataset used for sentiment analysis
+Dataset
 
 NaiveBayes.ipynb
 
@@ -138,196 +386,38 @@ Logistic Regression implementation
 
 SVM.ipynb
 
-SVM implementation with data augmentation
+SVM implementation
 
-Comparision.png
+Flow.png
+
+Project workflow
+
+Model Comparision.png
 
 Model comparison visualization
 
-Flowchart (1).png
+ML_Report.pdf
 
-Project workflow/flowchart
+Project report
 
-ML_Report_merged.pdf
+app.py
 
-Detailed project report
+Streamlit application
+
+requirements.txt
+
+Python dependencies
 
 README.md
 
 Project documentation
 
-🛠️ Technologies Used
+📜 License
 
-Programming Language
+This project is intended for educational and academic purposes.
 
-Python
+⭐ Acknowledgement
 
-Machine Learning
+The project uses the DailyDialog conversational dataset for experimentation with sentiment analysis and machine learning classification.
 
-Scikit-learn
-
-Naive Bayes
-
-Logistic Regression
-
-Support Vector Machine (SVM)
-
-Data Processing
-
-Pandas
-
-NumPy
-
-Regular Expressions
-
-NLP / Feature Extraction
-
-TF-IDF Vectorization
-
-Text preprocessing
-
-Sentiment label mapping
-
-Visualization
-
-Matplotlib
-
-Deployment
-
-Streamlit
-
-Streamlit Community Cloud
-
-Development Environment
-
-Jupyter Notebook
-
-Google Colab
-
-Visual Studio Code
-
-Git
-
-GitHub
-
-🚀 How to Run the Project
-
-1. Clone the repository
-
-git clone <YOUR_GITHUB_REPOSITORY_URL>
-cd Sentimental_Analysis-main
-
-Replace <YOUR_GITHUB_REPOSITORY_URL> with your GitHub repository URL.
-
-2. Install the required Python libraries
-
-pip install pandas numpy scikit-learn matplotlib
-
-3. Run the notebooks
-
-You can open the notebooks using Jupyter Notebook or Google Colab.
-
-For example:
-
-jupyter notebook
-
-Then open:
-
-SVM.ipynb
-
-You can also run:
-
-NaiveBayes.ipynb
-
-Logistic_Regression.ipynb
-
-4. Dataset
-
-The notebooks use:
-
-DailyDialog.csv
-
-The notebooks are designed to work with the dataset included in this repository.
-
-🔍 Sentiment Classification
-
-The project maps the original emotion labels from the DailyDialog dataset into three broader sentiment categories:
-
-Positive
-Neutral
-Negative
-
-The text is then cleaned and converted into numerical features using TF-IDF (Term Frequency–Inverse Document Frequency).
-
-These features are used to train the machine learning classifiers.
-
-📈 Evaluation Metrics
-
-The models are evaluated using:
-
-Accuracy
-
-Precision
-
-Recall
-
-F1-Score
-
-Classification Report
-
-These metrics help compare the models beyond accuracy alone.
-
-🌐 Streamlit Deployment
-
-The sentiment analysis application is deployed using Streamlit Community Cloud.
-
-Live Application
-
-https://sentimentalanalysis-2e2iguxmqlkgehxkxe2p3b.streamlit.app/
-
-The deployed application provides an interactive way to enter text and obtain a predicted sentiment.
-
-📸 Project Workflow
-
-The repository also contains:
-
-Flowchart (1).png — project workflow
-
-Comparision.png — model performance comparison
-
-These files provide a visual overview of the machine learning pipeline and model results.
-
-🎯 Future Enhancements
-
-Possible improvements include:
-
-Use transformer-based models such as BERT
-
-Improve handling of class imbalance
-
-Add more NLP preprocessing techniques
-
-Add confidence scores to predictions
-
-Support multiple languages
-
-Add sentiment visualization
-
-Improve the Streamlit user interface
-
-Deploy additional trained models for comparison
-
-Add automated model retraining
-
-👩‍💻 Author
-
-Navya Mannam
-
-GitHub:
-https://github.com/navyamannam
-
-📄 License
-
-This project is created for educational and demonstration purposes.
-    * When the first cell prompts you to upload a file, please upload the `DailyDialog.csv` file.
-    * Run the cells in order to see the data preprocessing, model training, and evaluation.
+If you find this project useful, consider giving the repository a ⭐.

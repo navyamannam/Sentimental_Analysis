@@ -1,423 +1,289 @@
-📊 Sentiment Analysis using Machine Learning
+# 🍽️ Restaurant Recommendation System
 
-A machine learning project for classifying conversational text into Positive, Negative, and Neutral sentiment categories using the DailyDialog dataset.
+A full-stack restaurant recommendation web application built using the **MERN stack**.  
+The application allows users to discover restaurants, filter them by location, cuisine, and rating, and view restaurant locations on an interactive map.
 
-The project compares three traditional machine learning algorithms:
+## 🌐 Live Demo
 
-Multinomial Naive Bayes
+**Deployed Application:**  
+https://restaurant-recommendation-mern.vercel.app/
 
-Logistic Regression
+## 📌 Project Overview
 
-Support Vector Machine (SVM)
+The Restaurant Recommendation System helps users find suitable restaurants based on their preferences.
 
-A Streamlit web application is also provided for interactive sentiment prediction.
+Users can:
 
-🚀 Live Demo
+- Browse restaurant recommendations
+- Filter restaurants by **location**
+- Filter restaurants by **cuisine**
+- Filter restaurants by **minimum rating**
+- View restaurant locations on an interactive map
+- View restaurant details such as cuisine, rating, and location
+- Get directions to a selected restaurant using Google Maps
+- Use the application through a responsive web interface
 
-Try the deployed application here:
+## ✨ Features
 
-👉 Sentiment Analysis Web App
+### 🔎 Restaurant Filtering
+Restaurants can be filtered using:
 
-Replace the link above with your actual Streamlit deployment URL if it is different from your GitHub repository URL.
+- Location
+- Cuisine
+- Minimum rating
 
-📌 Project Overview
+### 🗺️ Interactive Map
+The application uses **Mapbox** to display restaurant locations and the user's current location.
 
-Sentiment analysis is a Natural Language Processing (NLP) task that determines the emotional orientation of text.
+### 📍 Location & Directions
+The application can request the user's browser location and provides a **Get Directions** option that opens Google Maps.
 
-In this project, conversational sentences from the DailyDialog dataset are converted into three sentiment classes:
+### ⭐ Restaurant Ratings
+Each restaurant displays its rating to help users compare recommendations.
 
-Sentiment
+### 📱 Responsive Interface
+The frontend is built with React and Bootstrap-based components for a user-friendly interface.
 
-Description
+## 🛠️ Technologies Used
 
-😊 Positive
+### Frontend
 
-Text expressing a positive or favorable attitude
+- React.js
+- React DOM
+- React Bootstrap
+- Bootstrap 5
+- Axios
+- React Map GL
+- Mapbox GL
+- Leaflet / React Leaflet
+- HTML5
+- CSS3
+- JavaScript
 
-😐 Neutral
+### Backend
 
-Text expressing neither clearly positive nor negative sentiment
+- Node.js
+- Express.js
+- CORS
+- MongoDB / Mongoose support
 
-😞 Negative
+### Development Tools
 
-Text expressing an unfavorable or negative attitude
+- Visual Studio Code
+- Git
+- GitHub
+- npm
+- Vercel
 
-The main objective is to compare multiple machine learning approaches and identify a model that performs effectively on conversational data.
+## 📂 Project Structure
 
-🗂️ Dataset
-
-The project uses the DailyDialog dataset, which contains multi-turn conversations representing everyday human communication.
-
-The original emotion information is mapped into three broader sentiment categories:
-
-Positive
-
-Negative
-
-Neutral
-
-The dataset used in this project is available as:
-
-DailyDialog.csv
-
-🔄 Project Workflow
-
-DailyDialog Dataset
-        ↓
-Data Cleaning
-        ↓
-Sentiment Label Mapping
-        ↓
-Text Preprocessing
-        ↓
-TF-IDF Feature Extraction
-        ↓
-Train / Test Split
-        ↓
-┌───────────────────────────────┐
-│  Naive Bayes                  │
-│  Logistic Regression          │
-│  Support Vector Machine (SVM) │
-└───────────────────────────────┘
-        ↓
-Model Evaluation
-        ↓
-Best Model Selection
-        ↓
-Streamlit Web Application
-        ↓
-Sentiment Prediction
-
-The project workflow is also illustrated in Flow.png.
-
-🧹 Data Preprocessing
-
-The text data is processed before training the machine learning models.
-
-The preprocessing pipeline includes:
-
-Converting text to lowercase
-
-Removing unnecessary punctuation and special characters
-
-Cleaning the conversational text
-
-Mapping the original emotion labels to sentiment categories
-
-Converting text into numerical features using TF-IDF
-
-🧮 Feature Extraction — TF-IDF
-
-TF-IDF (Term Frequency–Inverse Document Frequency) is used to transform text into numerical feature vectors.
-
-TF-IDF gives higher importance to words that are useful for distinguishing between documents while reducing the influence of very common words.
-
-This representation is then supplied to the machine learning classifiers.
-
-🤖 Machine Learning Models
-
-1. Multinomial Naive Bayes
-
-Naive Bayes is used as a baseline text-classification algorithm.
-
-It is computationally efficient and commonly used for NLP classification tasks.
-
-2. Logistic Regression
-
-Logistic Regression is used as a strong linear classification model for the TF-IDF features.
-
-It learns the relationship between words and the corresponding sentiment classes.
-
-3. Support Vector Machine (SVM)
-
-A linear SVM is used for high-dimensional text classification.
-
-SVM was selected as the best-performing model in the comparative experiments.
-
-📈 Model Performance
-
-The comparative results from the project are:
-
-Model
-
-Accuracy
-
-Weighted F1-Score
-
-Naive Bayes
-
-72.24%
-
-69%
-
-Logistic Regression
-
-80.63%
-
-80%
-
-SVM
-
-80.73%
-
-80%
-
-🏆 Best Model
-
-Support Vector Machine (SVM) achieved the highest accuracy of approximately 80.73% among the tested models.
-
-The model also showed improved performance for the positive and neutral classes after addressing the class imbalance through data augmentation.
-
-📊 SVM Classification Report
-
-Class
-
-Precision
-
-Recall
-
-F1-Score
-
-Negative
-
-0.85
-
-0.91
-
-0.88
-
-Neutral
-
-0.72
-
-0.71
-
-0.71
-
-Positive
-
-0.77
-
-0.61
-
-0.68
-
-Overall Accuracy: 80.73%
-
-🖥️ Streamlit Application
-
-The project includes an interactive Streamlit application where users can enter a sentence and obtain a sentiment prediction.
-
-Example
-
-Input:
-
-I really enjoyed the movie.
-
-Expected sentiment:
-
-Positive
-
-Another example:
-
-Input:
-
-I am not happy with the service.
-
-Expected sentiment:
-
-Negative
-
-The Streamlit interface makes it possible to test the trained sentiment-analysis model without running the prediction code manually.
-
-📁 Project Structure
-
-Sentiment-Analysis-Project/
+```text
+restaurent-recommendation-main/
 │
-├── DailyDialog.csv
-├── NaiveBayes.ipynb
-├── Logistic_Regression.ipynb
-├── SVM.ipynb
-├── Flow.png
-├── Model Comparision.png
-├── ML_Report.pdf
-├── app.py
-├── requirements.txt
+├── backend/
+│   ├── models/
+│   │   ├── Restaurant.js
+│   │   └── restaurants.js
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── seed.js
+│   └── server.js
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── CardItem.js
+│   │   │   ├── MapComponent.js
+│   │   │   └── NavBar.js
+│   │   ├── context/
+│   │   │   ├── RestaurantContext.js
+│   │   │   └── useRestaurant.js
+│   │   ├── App.js
+│   │   ├── App.css
+│   │   ├── index.css
+│   │   └── index.js
+│   ├── package.json
+│   └── package-lock.json
+│
 └── README.md
+```
 
-The exact files may vary depending on the final deployed version of the project.
+## 🚀 Getting Started
 
-⚙️ Installation
+### Prerequisites
 
-Clone the repository:
+Make sure the following are installed:
 
-git clone https://github.com/YourUsername/Sentiment-Analysis-Project.git
-cd Sentiment-Analysis-Project
+- Node.js
+- npm
+- Git
+- MongoDB (if using the database/seed functionality)
 
-Install the required Python packages:
+Check Node.js and npm:
 
-pip install -r requirements.txt
+```bash
+node --version
+npm --version
+```
 
-If requirements.txt is not available, install the main dependencies:
+## 💻 Run the Frontend Locally
 
-pip install pandas numpy scikit-learn matplotlib streamlit
+Open a terminal and navigate to the frontend folder:
 
-▶️ Run the Streamlit Application
+```bash
+cd frontend
+```
 
-Run:
+Install dependencies:
 
-streamlit run app.py
+```bash
+npm install
+```
 
-The application will open in your browser.
+Start the React development server:
 
-📓 Running the Notebooks
+```bash
+npm start
+```
 
-The project contains notebooks for the individual machine learning models:
+The frontend will normally run at:
 
-NaiveBayes.ipynb
-Logistic_Regression.ipynb
-SVM.ipynb
+```text
+http://localhost:3000
+```
 
-They can be opened using:
+## ⚙️ Run the Backend Locally
 
-Jupyter Notebook
+Open a **second terminal** and navigate to the backend folder:
 
-JupyterLab
+```bash
+cd backend
+```
 
-VS Code
+Install dependencies:
 
-Google Colab
+```bash
+npm install
+```
 
-🎯 Applications
+Start the backend:
 
-This sentiment-analysis system can be used for:
+```bash
+npm start
+```
 
-Customer feedback analysis
+The backend will normally run at:
 
-Chat and conversation analysis
+```text
+http://localhost:5000
+```
 
-Social media sentiment monitoring
+### API Endpoint
 
-Market research
+The backend provides:
 
-Customer-support analysis
+```text
+GET /api/restaurants
+```
 
-Opinion mining
+Example:
 
-Conversational AI
+```text
+http://localhost:5000/api/restaurants
+```
 
-🔮 Future Improvements
+The API supports filtering using query parameters such as:
 
-Possible future improvements include:
+```text
+/api/restaurants?location=Delhi
+/api/restaurants?cuisine=Indian
+/api/restaurants?minRating=4
+```
 
-Using BERT or other Transformer models
+Filters can also be combined:
 
-Improving handling of negation such as "not bad"
+```text
+/api/restaurants?location=Delhi&cuisine=Indian&minRating=4
+```
 
-Hyperparameter tuning
+## 🗄️ Database
 
-Better handling of class imbalance
+The backend includes Mongoose models and a seed script for MongoDB.
 
-Larger and more diverse datasets
+The seed script can be run with:
 
-Real-time sentiment monitoring
+```bash
+node seed.js
+```
 
-Improved probability/confidence calibration
+Make sure MongoDB is running before using the database seed functionality.
 
-Deployment with a production API
+## 🌍 Deployment
 
-⚠️ Limitations
+The application frontend is deployed using **Vercel**.
 
-Traditional machine learning models based on TF-IDF primarily learn statistical relationships between words.
+### Live URL
 
-Therefore, they may have difficulty understanding:
+https://restaurant-recommendation-mern.vercel.app/
 
-Sarcasm
+The source code is available on GitHub:
 
-Context-dependent expressions
+https://github.com/navyamannam/restaurent-recommendation
 
-Negation
+## 🔐 Environment Variables
 
-Mixed emotions
+If you configure external services such as Mapbox or MongoDB using environment variables, create a `.env` file locally.
 
-Very short sentences
+Example:
 
-Unseen vocabulary
+```env
+MONGODB_URI=your_mongodb_connection_string
+MAPBOX_TOKEN=your_mapbox_token
+```
 
-For example, expressions such as "not bad" can sometimes be difficult for a traditional bag-of-words model because the model may give too much importance to individual words instead of understanding the complete phrase.
+**Do not commit secret API keys, database passwords, or private credentials to GitHub.**
 
-👨‍💻 Technologies Used
+## 🧪 Available npm Commands
 
-Python
+### Frontend
 
-Pandas
+```bash
+npm start
+npm run build
+npm test
+```
 
-NumPy
+### Backend
 
-Scikit-learn
+```bash
+npm start
+npm run dev
+```
 
-Matplotlib
+## 🎯 Future Enhancements
 
-Jupyter Notebook
+Possible improvements include:
 
-Streamlit
+- Connect the React frontend directly to the backend API
+- Store restaurant information permanently in MongoDB
+- Add user authentication
+- Add restaurant search
+- Add price-range filtering
+- Add restaurant images
+- Add favorites/wishlist functionality
+- Add restaurant reviews and comments
+- Add sorting by rating and distance
+- Improve map marker interactions
+- Add pagination for large restaurant datasets
 
-TF-IDF
+## 👩‍💻 Author
 
-Machine Learning
+**Navya Mannam**
 
-📚 Project Files
+GitHub:  
+https://github.com/navyamannam
 
-File
+## 📄 License
 
-Description
-
-DailyDialog.csv
-
-Dataset
-
-NaiveBayes.ipynb
-
-Naive Bayes implementation
-
-Logistic_Regression.ipynb
-
-Logistic Regression implementation
-
-SVM.ipynb
-
-SVM implementation
-
-Flow.png
-
-Project workflow
-
-Model Comparision.png
-
-Model comparison visualization
-
-ML_Report.pdf
-
-Project report
-
-app.py
-
-Streamlit application
-
-requirements.txt
-
-Python dependencies
-
-README.md
-
-Project documentation
-
-📜 License
-
-This project is intended for educational and academic purposes.
-
-⭐ Acknowledgement
-
-The project uses the DailyDialog conversational dataset for experimentation with sentiment analysis and machine learning classification.
-
-If you find this project useful, consider giving the repository a ⭐.
+This project is intended for educational and demonstration purposes.

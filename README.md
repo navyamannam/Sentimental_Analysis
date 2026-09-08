@@ -1,289 +1,331 @@
-# 🍽️ Restaurant Recommendation System
+📊 Sentiment Analysis — Comparative Study
 
-A full-stack restaurant recommendation web application built using the **MERN stack**.  
-The application allows users to discover restaurants, filter them by location, cuisine, and rating, and view restaurant locations on an interactive map.
+A machine learning project that compares Naive Bayes, Logistic Regression, and Support Vector Machine (SVM) models for sentiment classification using the DailyDialog dataset.
 
-## 🌐 Live Demo
+The project performs text preprocessing, TF-IDF feature extraction, model training, evaluation, and sentiment prediction. A Streamlit application provides an interactive interface for the final model.
 
-**Deployed Application:**  
-https://restaurant-recommendation-mern.vercel.app/
+🌐 Live Demo
 
-## 📌 Project Overview
+🚀 Try the deployed Streamlit application:
 
-The Restaurant Recommendation System helps users find suitable restaurants based on their preferences.
+https://sentimentalanalysis-2e2iguxmqlkgehxkxe2p3b.streamlit.app/
 
-Users can:
+📌 Project Overview
 
-- Browse restaurant recommendations
-- Filter restaurants by **location**
-- Filter restaurants by **cuisine**
-- Filter restaurants by **minimum rating**
-- View restaurant locations on an interactive map
-- View restaurant details such as cuisine, rating, and location
-- Get directions to a selected restaurant using Google Maps
-- Use the application through a responsive web interface
+Sentiment analysis is the task of identifying the emotional tone of a piece of text.
 
-## ✨ Features
+This project compares three machine learning algorithms:
 
-### 🔎 Restaurant Filtering
-Restaurants can be filtered using:
+Multinomial Naive Bayes
 
-- Location
-- Cuisine
-- Minimum rating
+Logistic Regression
 
-### 🗺️ Interactive Map
-The application uses **Mapbox** to display restaurant locations and the user's current location.
+Support Vector Machine (SVM)
 
-### 📍 Location & Directions
-The application can request the user's browser location and provides a **Get Directions** option that opens Google Maps.
+The models classify text into three sentiment categories:
 
-### ⭐ Restaurant Ratings
-Each restaurant displays its rating to help users compare recommendations.
+😊 Positive
 
-### 📱 Responsive Interface
-The frontend is built with React and Bootstrap-based components for a user-friendly interface.
+😐 Neutral
 
-## 🛠️ Technologies Used
+😞 Negative
 
-### Frontend
+After comparing the models, SVM achieved the best overall performance in this project.
 
-- React.js
-- React DOM
-- React Bootstrap
-- Bootstrap 5
-- Axios
-- React Map GL
-- Mapbox GL
-- Leaflet / React Leaflet
-- HTML5
-- CSS3
-- JavaScript
+✨ Features
 
-### Backend
+Text preprocessing and cleaning
 
-- Node.js
-- Express.js
-- CORS
-- MongoDB / Mongoose support
+Sentiment label mapping
 
-### Development Tools
+TF-IDF based feature extraction
 
-- Visual Studio Code
-- Git
-- GitHub
-- npm
-- Vercel
+Training with multiple machine learning algorithms
 
-## 📂 Project Structure
+Model comparison using accuracy
 
-```text
-restaurent-recommendation-main/
+Evaluation using precision, recall, and F1-score
+
+Data augmentation for the SVM model
+
+Interactive sentiment prediction through Streamlit
+
+Sample dataset included in the repository
+
+📊 Model Performance
+
+The models were evaluated on the DailyDialog dataset.
+
+Model
+
+Accuracy
+
+🥇 Support Vector Machine (SVM)
+
+80.73%
+
+🥈 Logistic Regression
+
+80.63%
+
+🥉 Naive Bayes
+
+72.24%
+
+Best Model
+
+The Support Vector Machine (SVM) model achieved the highest accuracy of approximately 80.73% and provided the best overall balance among the tested approaches.
+
+🧠 Machine Learning Workflow
+
+DailyDialog Dataset
+        ↓
+Data Cleaning
+        ↓
+Emotion → Sentiment Mapping
+        ↓
+Text Preprocessing
+        ↓
+TF-IDF Vectorization
+        ↓
+Train / Test Split
+        ↓
+Model Training
+   ┌────┼───────────────┐
+   ↓    ↓               ↓
+Naive  Logistic         SVM
+Bayes  Regression
+   └────┼───────────────┘
+        ↓
+Model Evaluation
+        ↓
+Best Model Selection
+        ↓
+Sentiment Prediction
+        ↓
+Streamlit Web Application
+
+📂 Project Structure
+
+Sentimental_Analysis-main/
 │
-├── backend/
-│   ├── models/
-│   │   ├── Restaurant.js
-│   │   └── restaurants.js
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── seed.js
-│   └── server.js
-│
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── CardItem.js
-│   │   │   ├── MapComponent.js
-│   │   │   └── NavBar.js
-│   │   ├── context/
-│   │   │   ├── RestaurantContext.js
-│   │   │   └── useRestaurant.js
-│   │   ├── App.js
-│   │   ├── App.css
-│   │   ├── index.css
-│   │   └── index.js
-│   ├── package.json
-│   └── package-lock.json
-│
+├── DailyDialog.csv
+├── NaiveBayes.ipynb
+├── Logistic_Regression.ipynb
+├── SVM.ipynb
+├── Comparision.png
+├── Flowchart (1).png
+├── ML_Report_merged.pdf
 └── README.md
-```
 
-## 🚀 Getting Started
+Files
 
-### Prerequisites
+File
 
-Make sure the following are installed:
+Description
 
-- Node.js
-- npm
-- Git
-- MongoDB (if using the database/seed functionality)
+DailyDialog.csv
 
-Check Node.js and npm:
+Dataset used for sentiment analysis
 
-```bash
-node --version
-npm --version
-```
+NaiveBayes.ipynb
 
-## 💻 Run the Frontend Locally
+Naive Bayes implementation
 
-Open a terminal and navigate to the frontend folder:
+Logistic_Regression.ipynb
 
-```bash
-cd frontend
-```
+Logistic Regression implementation
 
-Install dependencies:
+SVM.ipynb
 
-```bash
-npm install
-```
+SVM implementation with data augmentation
 
-Start the React development server:
+Comparision.png
 
-```bash
-npm start
-```
+Model comparison visualization
 
-The frontend will normally run at:
+Flowchart (1).png
 
-```text
-http://localhost:3000
-```
+Project workflow/flowchart
 
-## ⚙️ Run the Backend Locally
+ML_Report_merged.pdf
 
-Open a **second terminal** and navigate to the backend folder:
+Detailed project report
 
-```bash
-cd backend
-```
+README.md
 
-Install dependencies:
+Project documentation
 
-```bash
-npm install
-```
+🛠️ Technologies Used
 
-Start the backend:
+Programming Language
 
-```bash
-npm start
-```
+Python
 
-The backend will normally run at:
+Machine Learning
 
-```text
-http://localhost:5000
-```
+Scikit-learn
 
-### API Endpoint
+Naive Bayes
 
-The backend provides:
+Logistic Regression
 
-```text
-GET /api/restaurants
-```
+Support Vector Machine (SVM)
 
-Example:
+Data Processing
 
-```text
-http://localhost:5000/api/restaurants
-```
+Pandas
 
-The API supports filtering using query parameters such as:
+NumPy
 
-```text
-/api/restaurants?location=Delhi
-/api/restaurants?cuisine=Indian
-/api/restaurants?minRating=4
-```
+Regular Expressions
 
-Filters can also be combined:
+NLP / Feature Extraction
 
-```text
-/api/restaurants?location=Delhi&cuisine=Indian&minRating=4
-```
+TF-IDF Vectorization
 
-## 🗄️ Database
+Text preprocessing
 
-The backend includes Mongoose models and a seed script for MongoDB.
+Sentiment label mapping
 
-The seed script can be run with:
+Visualization
 
-```bash
-node seed.js
-```
+Matplotlib
 
-Make sure MongoDB is running before using the database seed functionality.
+Deployment
 
-## 🌍 Deployment
+Streamlit
 
-The application frontend is deployed using **Vercel**.
+Streamlit Community Cloud
 
-### Live URL
+Development Environment
 
-https://restaurant-recommendation-mern.vercel.app/
+Jupyter Notebook
 
-The source code is available on GitHub:
+Google Colab
 
-https://github.com/navyamannam/restaurent-recommendation
+Visual Studio Code
 
-## 🔐 Environment Variables
+Git
 
-If you configure external services such as Mapbox or MongoDB using environment variables, create a `.env` file locally.
+GitHub
 
-Example:
+🚀 How to Run the Project
 
-```env
-MONGODB_URI=your_mongodb_connection_string
-MAPBOX_TOKEN=your_mapbox_token
-```
+1. Clone the repository
 
-**Do not commit secret API keys, database passwords, or private credentials to GitHub.**
+git clone <YOUR_GITHUB_REPOSITORY_URL>
+cd Sentimental_Analysis-main
 
-## 🧪 Available npm Commands
+Replace <YOUR_GITHUB_REPOSITORY_URL> with your GitHub repository URL.
 
-### Frontend
+2. Install the required Python libraries
 
-```bash
-npm start
-npm run build
-npm test
-```
+pip install pandas numpy scikit-learn matplotlib
 
-### Backend
+3. Run the notebooks
 
-```bash
-npm start
-npm run dev
-```
+You can open the notebooks using Jupyter Notebook or Google Colab.
 
-## 🎯 Future Enhancements
+For example:
+
+jupyter notebook
+
+Then open:
+
+SVM.ipynb
+
+You can also run:
+
+NaiveBayes.ipynb
+
+Logistic_Regression.ipynb
+
+4. Dataset
+
+The notebooks use:
+
+DailyDialog.csv
+
+The notebooks are designed to work with the dataset included in this repository.
+
+🔍 Sentiment Classification
+
+The project maps the original emotion labels from the DailyDialog dataset into three broader sentiment categories:
+
+Positive
+Neutral
+Negative
+
+The text is then cleaned and converted into numerical features using TF-IDF (Term Frequency–Inverse Document Frequency).
+
+These features are used to train the machine learning classifiers.
+
+📈 Evaluation Metrics
+
+The models are evaluated using:
+
+Accuracy
+
+Precision
+
+Recall
+
+F1-Score
+
+Classification Report
+
+These metrics help compare the models beyond accuracy alone.
+
+🌐 Streamlit Deployment
+
+The sentiment analysis application is deployed using Streamlit Community Cloud.
+
+Live Application
+
+https://sentimentalanalysis-2e2iguxmqlkgehxkxe2p3b.streamlit.app/
+
+The deployed application provides an interactive way to enter text and obtain a predicted sentiment.
+
+📸 Project Workflow
+
+The repository also contains:
+
+Flowchart (1).png — project workflow
+
+Comparision.png — model performance comparison
+
+These files provide a visual overview of the machine learning pipeline and model results.
+
+🎯 Future Enhancements
 
 Possible improvements include:
 
-- Connect the React frontend directly to the backend API
-- Store restaurant information permanently in MongoDB
-- Add user authentication
-- Add restaurant search
-- Add price-range filtering
-- Add restaurant images
-- Add favorites/wishlist functionality
-- Add restaurant reviews and comments
-- Add sorting by rating and distance
-- Improve map marker interactions
-- Add pagination for large restaurant datasets
+Use transformer-based models such as BERT
 
-## 👩‍💻 Author
+Improve handling of class imbalance
 
-**Navya Mannam**
+Add more NLP preprocessing techniques
 
-GitHub:  
+Add confidence scores to predictions
+
+Support multiple languages
+
+Add sentiment visualization
+
+Improve the Streamlit user interface
+
+Deploy additional trained models for comparison
+
+Add automated model retraining
+
+👩‍💻 Author
+
+Navya Mannam
+
+GitHub:
 https://github.com/navyamannam
 
-## 📄 License
+📄 License
 
-This project is intended for educational and demonstration purposes.
+This project is created for educational and demonstration purposes.

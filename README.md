@@ -1,3 +1,7 @@
+## 🚀 Live Demo
+
+👉 [Click here to use the Live Demo](https://sentimentanalysis-2e2iguxmqlkgehhkxe2p3b.streamlit.app/)
+
 # Sentiment Analysis: A Comparative Study 📈
 
 This project compares three different machine learning models (Naive Bayes, Logistic Regression, and SVM) to determine the best approach for sentiment analysis on the DailyDialog dataset.

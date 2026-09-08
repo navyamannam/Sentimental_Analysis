@@ -1,6 +1,6 @@
 ## 🚀 Live Demo
 
-👉 [Click here to use the Live Demo]([https://sentimentanalysis-2e2iguxmqlkgehhkxe2p3b.streamlit.app/])
+👉 [Click here to use the Live Demo](https://sentimentalanalysis-2e2iguxmqlkgehxkxe2p3b.streamlit.app/)
 
 # Sentiment Analysis: A Comparative Study 📈
 
